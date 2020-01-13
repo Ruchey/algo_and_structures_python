@@ -10,26 +10,26 @@
 """
 from random import randint, uniform
 
-mn = int(input('Введите минимальный предел целого числа: '))
-mx = int(input('Введите максимальный предел целого числа:: '))
-if mn > mx:
-    mn, mx = mx, mn
-elif mn == mx:
+MN = int(input('Введите минимальный предел целого числа: '))
+MX = int(input('Введите максимальный предел целого числа:: '))
+if MN > MX:
+    MN, MX = MX, MN
+elif MN == MX:
     print('Числа не должны быть одинаковы')
-rnd = randint(mn, mx)
+rnd = randint(MN, MX)
 print(f'случайное целое число: {rnd}')
 
-mn = float(input('Введите минимальный предел вещественного числа: '))
-mx = float(input('Введите максимальный предел вещественного числа: '))
+MN = float(input('Введите минимальный предел вещественного числа: '))
+MX = float(input('Введите максимальный предел вещественного числа: '))
 
-if mn > mx:
-    mn, mx = mx, mn
-elif mn == mx:
+if MN > MX:
+    MN, MX = MX, MN
+elif MN == MX:
     print('Числа не должны быть одинаковы')
-rnd = uniform(mn, mx)
+rnd = uniform(MN, MX)
 print(f'случайное вещественное число: {rnd}')
 
-mn = input('Введите первую букву: ')
-mx = input('Введите вторую букву: ')
-rnd_chr = chr(randint(ord(mn), ord(mx)))
-print(f'Случайный символ между {mn} и {mx}: {rnd_chr}')
+MN = input('Введите первую букву: ')
+MX = input('Введите вторую букву: ')
+rnd_chr = chr(randint(ord(MN), ord(MX)))
+print(f'Случайный символ между {MN} и {MX}: {rnd_chr}')

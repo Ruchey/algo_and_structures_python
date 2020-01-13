@@ -9,3 +9,21 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+import sys
+
+
+def calculator():
+    """Калькулятор"""
+    a = float(input("Введите число a: "))
+    b = float(input("Введите число b: "))
+    action = input("Введите действие: + - * / 0-закончить ")
+    if action == "0":
+       sys.exit(0)
+    if action == "/" and b == 0:
+        print("На ноль делить нельзя. Попробуйте заново")
+        calculator()
+    print(f"Результат a {action} b = {eval(f'{a}{action}{b}')}")
+    calculator()
+
+
+calculator()
