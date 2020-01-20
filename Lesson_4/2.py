@@ -10,7 +10,7 @@ import cProfile
 
 def gen(n):
     num = []
-    for i in range(1, n):
+    for i in range(0, n):
         num.append(i)
     return num
 
@@ -29,13 +29,14 @@ def definit_prime(n):
 def find_prime(arr):
     """Находим простые числа"""
     res = []
-    for i in arr:
-        if definit_prime(i):
+    for i in range(2, len(arr)):
+        if definit_prime(arr[i]):
             res.append(i)
     return res
 
 
 def resheto(num):
+    num[1] = 0
     m = 2
     cnt = len(num)
     while m < cnt:
@@ -63,4 +64,4 @@ print('Решето Эротосфена')
 cProfile.run('resheto(NUM)')
 
 # Вывод: решето работает быстрее при большем количестве массива.
-# Но почему-то сам алгоритм работает не правильно, пропускает числа кратные 2
+
