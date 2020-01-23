@@ -16,6 +16,27 @@ class HEX:
             return letters[l]
         return int(l)
 
+    def ntl(self, n):
+        "Convert a number to a letter"
+        if n < 10:
+            return n
+        if n > 15:
+            return 0
+        nums = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
+        return nums[n]
+
+    def dec_to_hex(self, n):
+        nums = []
+        while n > 15:
+            nums.append(n % 16)
+            n = int(n / 16)
+        nums.append(n)
+        nums.reverse()
+        to_hex = []
+        for i in nums:
+            to_hex.append(str(self.ntl(i)))
+        return "".join(to_hex)
+
     def __init__(self, h):
         nums = list(h)
         deg = len(nums) - 1
@@ -28,18 +49,17 @@ class HEX:
 
     def __add__(self, obj):
         self.summ = self.num + obj.num
-        return self.summ
+        return self.dec_to_hex(self.summ)
 
     def __mul__(self, obj):
         self.mult = self.num * obj.num
-        return self.mult
+        return self.dec_to_hex(self.mult)
 
 
-a = HEX('A1')
-b = HEX('B4')
+a = HEX('A2')
+b = HEX('C4F')
 c = a + b
 d = a * b
-print(a.num)
-print(b.num)
+
 print(c)
 print(d)
