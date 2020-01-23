@@ -53,15 +53,15 @@ def resheto(num):
     return res
 
 
-NUM = gen(10000)
-# print(NUM)
+NUM = gen(10)
+print(NUM)
 # print(find_prime(NUM))
-# print(resheto(NUM))
+print(resheto(NUM))
 
-print('Мой метод')
-cProfile.run('find_prime(NUM)')
-print('Решето Эротосфена')
-cProfile.run('resheto(NUM)')
+# print('Мой метод')
+# cProfile.run('find_prime(NUM)')
+# print('Решето Эротосфена')
+# cProfile.run('resheto(NUM)')
 
 # Вывод: решето работает быстрее при большем количестве массива.
 
