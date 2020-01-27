@@ -7,3 +7,36 @@
 комментариев к коду. Также укажите в комментариях версию Python
 и разрядность вашей ОС.
 """
+
+
+from memory_profiler import profile
+
+
+def recursion(a, b):
+    """Рекурсия"""
+    # базовый случай
+    # последний шаг рекурсии
+    if a == b:
+        return str(a)
+    # шаг рекурсии
+    # рекурсивное условие
+    elif a > b:
+        return f'{str(a)} {recursion(a - 1, b)}'
+    # шаг рекурсии
+    # рекурсивное условие
+    elif a < b:
+        return f'{str(a)} {recursion(a + 1, b)}'
+
+
+@profile
+def test():
+    a = recursion(200, 15)
+    b = [i for i in a]
+    # del a
+    return b
+
+
+if __name__ == "__main__":
+    t = test()
+
+# Перепробовал несколько своих кодов из предыдущих, ничего существенного не показало.
